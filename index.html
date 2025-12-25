@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celeb Photo Prompt Maker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <header class="panel__header">
+        <h1>Celeb Photo Prompt Maker</h1>
+        <p>Fill in the details to generate a ready-to-use image edit prompt.</p>
+      </header>
+      <form id="prompt-form" class="form">
+        <div class="field">
+          <label for="action">Action</label>
+          <input id="action" name="action" type="text" placeholder="smiling, waving, walking" required />
+          <p class="help-text">What is the person in the image doing?</p>
+        </div>
+        <div class="field">
+          <label for="celebrity">Celebrity name</label>
+          <input id="celebrity" name="celebrity" type="text" placeholder="Actor or musician name" required />
+          <p class="help-text">The celebrity you want to be shown with.</p>
+        </div>
+        <div class="field">
+          <label for="position">Celebrity position</label>
+          <input id="position" name="position" type="text" placeholder="hugging you, standing beside you, holding your hand" required />
+          <p class="help-text">How the celebrity is positioned relative to you.</p>
+        </div>
+        <div class="field">
+          <label for="movie-name">Movie scene name</label>
+          <input id="movie-name" name="movie-name" type="text" placeholder="Movie title" required />
+          <p class="help-text">Name of the movie for the scene.</p>
+        </div>
+        <div class="field">
+          <label for="movie-location">Movie scene location</label>
+          <input id="movie-location" name="movie-location" type="text" placeholder="City, venue, or landmark" required />
+          <p class="help-text">Where the movie scene takes place.</p>
+        </div>
+        <div class="field">
+          <label for="result">Result description</label>
+          <textarea id="result" name="result" rows="3" placeholder="Describe the final image" required></textarea>
+          <p class="help-text">Anything else you want reflected in the generated image.</p>
+        </div>
+        <div class="actions">
+          <button type="submit">Generate prompt</button>
+          <button type="button" id="copy-button" class="secondary" disabled>Copy prompt</button>
+        </div>
+        <p class="status" id="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <header class="panel__header">
+        <h2>Generated prompt</h2>
+        <p>The prompt appears below once all fields are filled in.</p>
+      </header>
+      <pre id="prompt-output" class="output" tabindex="0" aria-live="polite">Fill in the form to see your prompt.</pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
